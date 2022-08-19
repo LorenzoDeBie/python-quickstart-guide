@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: python-quickstart
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 app:app
+    expose:
+      - 5000
+  nginx:
+    build: nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - web

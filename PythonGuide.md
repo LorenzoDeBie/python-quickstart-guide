@@ -494,7 +494,7 @@ Python strings can be indexed using the same notation as lists, since strings ar
 string = "python"
 
 string[0]   -> p
-string[3]   -> i
+string[3]   -> h
 string[-1]  -> n
 ```
 
@@ -639,7 +639,7 @@ def print_full_name(first_name: str = "John", last_name :str = "Doe") -> str:
 
 print(print_full_name("Nyctophilopython", "oenpelliensis"))
 >>> "Nyctophilopython oenpelliensis"
-pritn(print_full_name())
+print(print_full_name())
 >>> "John Doe"
 ```
 
@@ -805,7 +805,7 @@ To read only one line instead of multiple lines in a file, use the method `.read
 By default, a file is opened for reading only. A second argument `r` is passed to it as a default value. To write to a file, the file should be opened with write permission via the `w` argument. After that the `.write()` method can be used to write to the file. If the file already exists, all prior content will be overwritten.
 
 ```python
-with open('example.txt', 'r') as file_object:
+with open('example.txt', 'w') as file_object:
     file_object.write("Data to be writte to the file.")
 ```
 
@@ -848,10 +848,10 @@ By default classes come with a set 'special' function. These functions can be ov
 ```python
 class Language:
     def __init__(self, name: str):
-        self.name
+        self.name = name
 
 python = Language("Python")
-java = ("Java")
+java = Language("Java")
 ```
 
 ### Class variables
